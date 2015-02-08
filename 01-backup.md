@@ -3,7 +3,7 @@ layout: page
 title: Version Control with Git
 subtitle: A Better Kind of Backup
 ---
-> ## Learning Objectives {.objectives}
+> ## Learning Objectives  
 > 
 > *   Explain which initialization and configuration steps are required once per machine,
 >     and which are required once per repository.
@@ -55,7 +55,7 @@ we're telling Git:
 The four commands above only need to be run once:
 the flag `--global` tells Git to use the settings for every project on this machine.
 
-> ## Proxy {.callout}
+> ## Proxy  
 >
 > In some networks you need to use a proxy. If this is the case you may also
 > need to tell Git about the proxy:
@@ -262,7 +262,7 @@ the revision's author,
 when it was created,
 and the log message Git was given when the revision was created.
 
-> ## Where Are My Changes? {.callout}
+> ## Where Are My Changes?  
 >
 > If we run `ls` at this point, we will still see just one file called `mars.txt`.
 > That's because Git saves information about files' history
@@ -389,7 +389,7 @@ but not yet committed.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
 
-<img src="fig/git-staging-area.svg" alt="The Git Staging Area" />
+<img src="fig/git-staging-area.png" alt="The Git Staging Area" />
 
 Let's watch as our changes to a file move from our editor
 to the staging area
@@ -505,7 +505,7 @@ we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`):
 
-<img src="fig/git-committing.svg" alt="The Git Commit Workflow" />
+<img src="fig/git-committing.png" alt="The Git Commit Workflow" />
 
 ### Exploring History
 
@@ -657,14 +657,14 @@ the commit in which we made the change we're trying to get rid of.
 In the example below, we want retrieve the state from before the most
 recent commit (`HEAD~1`), which is revision `f22b25e`:
 
-<img src="fig/git-checkout.svg" alt="Git Checkout" />
+<img src="fig/git-checkout.png" alt="Git Checkout" />
 
 The following diagram illustrates what the history of a file might look
 like (moving back from `HEAD`, the most recently committed version):
 
-<img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
+<img src="fig/git-when-revisions-updated.png" alt="When Git Updates Revision Numbers" />
 
-> ## Simplifying the Common Case {.callout}
+> ## Simplifying the Common Case  
 >
 > If you read the output of `git status` carefully,
 > you'll see that it includes this hint:
@@ -803,7 +803,7 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
-> ## Committing Changes to Git {.challenge}
+> ## Committing Changes to Git  
 >
 > Which command(s) below would save changes of `myfile.txt` to my local Git repository?
 >
@@ -814,7 +814,7 @@ nothing to commit, working directory clean
 >    `git commit -m "my recent changes"`
 > 4. `git commit -m myfile.txt "my recent changes"`
 
-> ## Recovering Older Versions of a File {.challenge}
+> ## Recovering Older Versions of a File  
 >
 > Jennifer has made changes to the Python script that she has been working on for weeks, and the 
 > modifications she made this morning "broke" the script and it no longer runs. She has spent
@@ -830,7 +830,7 @@ nothing to commit, working directory clean
 > 4. `git checkout <unique ID of last revision> data_cruncher.py`
 > 5. Both 2 & 4
 
-> ## `bio` Repository {.challenge}
+> ## `bio` Repository  
 >
 > Create a new Git repository on your computer called `bio`.
 > Write a three-line biography for yourself in a file called `me.txt`,
@@ -838,7 +838,7 @@ nothing to commit, working directory clean
 > then modify one line and add a fourth and display the differences
 > between its updated state and its original state.
 
-> ## Places to Create Git Repositories {.challenge}
+> ## Places to Create Git Repositories  
 >
 > The following sequence of commands creates one Git repository inside another:
 > 
