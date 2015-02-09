@@ -3,7 +3,7 @@ layout: page
 title: Version Control with Git
 subtitle: Collaborating
 ---
-> ## Learning Objectives {.objectives}
+> ## Learning Objectives 
 >
 > *   Explain what remote repositories are and why they are useful.
 > *   Explain what happens when a remote repository is cloned.
@@ -49,7 +49,7 @@ $ git init
 Our local repository still contains our earlier work on `mars.txt`,
 but the remote repository on GitHub doesn't contain any files yet:
 
-<img src="fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" />
+<img src="fig/git-freshly-made-github-repo.png" alt="Freshly-Made GitHub Repository" />
 
 The next step is to connect the two repositories.
 We do this by making the GitHub repository a [remote](reference.html#remote)
@@ -61,7 +61,7 @@ the string we need to identify it:
 
 Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from SSH to HTTPS.
 
-> ## HTTPS vs SSH {.callout}
+> ## HTTPS vs SSH  
 >
 > We use HTTPS here because it does not require additional configuration.
 > After the workshop you may want to set up SSH access, which is a bit more
@@ -78,11 +78,11 @@ go into the local `planets` repository,
 and run this command:
 
 ~~~ {.bash}
-$ git remote add origin https://github.com/vlad/planets
+$ git remote add origin https://github.com/viorica/planets
 ~~~
 
-Make sure to use the URL for your repository rather than Vlad's:
-the only difference should be your username instead of `vlad`.
+Make sure to use the URL for your repository rather than Viorica's:
+the only difference should be your username instead of `viorica`.
 
 We can check that the command has worked by running `git remote -v`:
 
@@ -90,8 +90,8 @@ We can check that the command has worked by running `git remote -v`:
 $ git remote -v
 ~~~
 ~~~ {.output}
-origin   https://github.com/vlad/planets.git (push)
-origin   https://github.com/vlad/planets.git (fetch)
+origin   https://github.com/viorica/planets.git (push)
+origin   https://github.com/viorica/planets.git (fetch)
 ~~~
 
 The name `origin` is a local nickname for your remote repository:
@@ -111,12 +111,12 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To https://github.com/viorica/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
 
-> ## Proxy {.callout}
+> ## Proxy  
 >
 > If the network you are connected to uses a proxy there is an chance that your last
 > command failed with "Could not resolve hostname" as the error message. To
@@ -135,7 +135,7 @@ Branch master set up to track remote branch master from origin.
 > $ git config --global --unset https.proxy
 > ~~~
 
-> ## Password Managers {.callout}
+> ## Password Managers  
 >
 > If your operating system has a password manager configured, `git push` will
 > try to use it when it needs your username and password. If you want to type
@@ -151,9 +151,9 @@ Branch master set up to track remote branch master from origin.
 
 Our local and remote repositories are now in this state:
 
-<img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" />
+<img src="fig/github-repo-after-first-push.png" alt="GitHub Repository After First Push" />
 
-> ## The '-u' Flag {.callout}
+> ## The '-u' Flag  
 >
 > You may see a `-u` option used with `git push` in some documentation.
 > It is related to concepts we cover in our intermediate lesson,
@@ -165,7 +165,7 @@ We can pull changes from the remote repository to the local one as well:
 $ git pull origin master
 ~~~
 ~~~ {.output}
-From https://github.com/vlad/planets
+From https://github.com/viorica/planets
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
@@ -179,7 +179,7 @@ this command would download them to our local repository.
 For the next step, get into pairs.
 Pick one of your repositories on Github to use for collaboration.
 
-> ## Practicing by yourself {.callout}
+> ## Practicing by yourself  
 >
 > If you're working through this lesson on your own, you can carry on by opening
 > a second terminal window, and switching to another directory (e.g. `/tmp`).
@@ -197,14 +197,14 @@ The other partner should `cd` to another directory
 and then make a copy of this repository on your own computer:
 
 ~~~ {.bash}
-$ git clone https://github.com/vlad/planets.git
+$ git clone https://github.com/viorica/planets.git
 ~~~
 
-Replace 'vlad' with your partner's username (the one who owns the repository).
+Replace 'viorica' with your partner's username (the one who owns the repository).
 
 `git clone` creates a fresh local copy of a remote repository.
 
-<img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository" />
+<img src="fig/github-collaboration.png" alt="After Creating Clone of Repository" />
 
 The new collaborator can now make a change in their copy of the repository:
 
@@ -236,7 +236,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/viorica/planets.git
    9272da5..29aba7c  master -> master
 ~~~
 
@@ -257,7 +257,7 @@ remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/viorica/planets
  * branch            master     -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
@@ -266,7 +266,9 @@ Fast-forward
  create mode 100644 pluto.txt
 ~~~
 
-> ## GitHub Timestamp {.challenge}
+## Try the challenges below.
+
+> ## GitHub Timestamp 
 >
 > Create a repository on GitHub,
 > clone it,

@@ -803,6 +803,8 @@ $ git status --ignored
 nothing to commit, working directory clean
 ~~~
 
+## Try the challenges below.
+
 > ## Committing Changes to Git  
 >
 > Which command(s) below would save changes of `myfile.txt` to my local Git repository?
