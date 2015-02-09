@@ -32,8 +32,8 @@ we need to configure a few things.
 Here's how Dracula sets up his new laptop:
 
 ~~~ {.bash}
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global user.name "Viorica Dracula"
+$ git config --global user.email "viorica@tran.sylvan.ia"
 $ git config --global color.ui "auto"
 $ git config --global core.editor "nano"
 ~~~
@@ -247,7 +247,7 @@ $ git log
 ~~~
 ~~~ {.output}
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Viorica Dracula <viorica@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Starting to think about Mars
@@ -482,19 +482,19 @@ $ git log
 ~~~
 ~~~ {.output}
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Viorica Dracula <viorica@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
     Thoughts about the climate
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Viorica Dracula <viorica@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
     Concerns about Mars's moons on my furry friend
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: Viorica Dracula <viorica@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Starting to think about Mars
