@@ -3,7 +3,7 @@ layout: page
 title: Version Control with Git
 subtitle: Open Science
 ---
-> ## Learning Objectives {.objectives}
+> ## Learning Objectives 
 >
 > *   Explain how the GNU General Public License (GPL) differs from most other open licenses.
 > *   Explain the four kinds of restrictions that can be combined in a Creative Commons license.
@@ -218,14 +218,16 @@ but many institutions place restrictions on sharing, for example to
 protect potentially patentable intellectual property.
 If you encounter such restrictions, it can be productive to inquire about the underlying motivations - either to request an exception for a specific project or domain, or to push more broadly for institutional reform to support more open science.
 
-> ## Can I Use Open License? {.challenge}
+## Try the challenges below.
+
+> ## Can I Use Open License? 
 >
 > Find out whether you are allowed to apply an open license to your software.
 > Can you do this unilaterally,
 > or do you need permission from someone in your institution?
 > If so, who?
 
-> ## My Work Can Be Public? {.challenge}
+> ## My Work Can Be Public? 
 >
 > Find out whether you are allowed to host your work openly on a public forge.
 > Can you do this unilaterally,
