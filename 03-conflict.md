@@ -3,7 +3,7 @@ layout: page
 title: Version Control with Git
 subtitle: Conflicts
 ---
-> ## Learning Objectives {.objectives}
+> ## Learning Objectives 
 >
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.
@@ -62,7 +62,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To https://github.com/viorica/planets
    29aba7c..dabb4c8  master -> master
 ~~~
 
@@ -98,16 +98,16 @@ but Git won't let us push it to GitHub:
 $ git push origin master
 ~~~
 ~~~ {.output}
-To https://github.com/vlad/planets.git
+To https://github.com/viorica/planets.git
  ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'https://github.com/viorica/planets.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
 hint: before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ~~~
 
-<img src="fig/conflict.svg" alt="The conflicting changes" />
+<img src="fig/conflict.png" alt="The conflicting changes" />
 
 Git detects that the changes made in one copy overlap with those made in the other
 and stops us from trampling on our previous work.
@@ -124,7 +124,7 @@ remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.        
 remote: Total 3 (delta 1), reused 3 (delta 1)        
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/viorica/planets
  * branch            master     -> FETCH_HEAD
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
@@ -207,7 +207,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/viorica/planets.git
    dabb4c8..2abf2b1  master -> master
 ~~~
 
@@ -223,7 +223,7 @@ remote: Counting objects: 10, done.
 remote: Compressing objects: 100% (4/4), done.        
 remote: Total 6 (delta 2), reused 6 (delta 2)        
 Unpacking objects: 100% (6/6), done.
-From https://github.com/vlad/planets
+From https://github.com/viorica/planets
  * branch            master     -> FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward
@@ -254,7 +254,9 @@ the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
 
-> ## Solving Conflicts that You Create {.challenge}
+## Try the challenges below.
+
+> ## Solving Conflicts that You Create 
 >
 > Clone the repository created by your instructor.
 > Add a new file to it,
@@ -263,7 +265,7 @@ or find a way to divide the work up differently.
 > pull her changes from the repository to create a conflict,
 > then resolve it.
 
-> ## Conflicts on Non-textual files {.challenge}
+> ## Conflicts on Non-textual files
 >
 > What does Git do
 > when there is a conflict in an image or some other non-textual file
