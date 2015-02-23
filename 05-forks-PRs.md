@@ -7,36 +7,33 @@ subtitle: Conflicts
 >
 > *   Be able to fork a repository on GitHub.
 > *   Add and use remotes.
-> *   Explain what conflicts are and when they can occur.
-> *   Resolve conflicts resulting from a merge.
 > *   Learn how to submit a pull request.
+> *   Identify tickets on open source projects.
 
-As soon as people can work in parallel,
-someone's going to step on someone else's toes.
-This will even happen with a single person:
-if we are working on a piece of software on both our laptop and a server in the lab,
-we could make different changes to each copy.
-Version control helps us manage these [conflicts](reference.html#conflicts)
-by giving us tools to [resolve](reference.html#resolve) overlapping changes.
 
 ### Forking and Remotes
-To see how we can resolve conflicts,
-we must first create one.
-We're going to combine this with learning about [Forking](https://help.github.com/articles/fork-a-repo/)
-and making [Pull Requests](https://help.github.com/articles/using-pull-requests/) on GitHub.
+We can use GitHub's idea of [Forking](https://help.github.com/articles/fork-a-repo/)
+and [Remotes](https://help.github.com/articles/about-remote-repositories/)
+to see how we can collaborate with projects in a way that allows us
+to contribute back in a more elegant way.
 
 Open a webbrowser and navigate to github. Log in as yourself.
 Now, navigate to [https://github.com/rachelslaybaugh/planets](https://github.com/rachelslaybaugh/planets) and click the "Fork" button.
 
 <img src="fig/fork.png" alt="The fork button" />
 
-This will create a copy of my repository under your username (you can rename it so you don't cause conflicts with your existing plants directory).
+This will create a copy of my repository under your username 
+(you can rename it so you don't cause conflicts with your existing planets directory).
 
-Now, open your shell, navigate to the location where you are doing work for this class,
-and clone the repository that you just forked from me,
+Now, open your shell, 
+navigate to the location where you are doing work for this class,
+clone the repository that you just forked from me,
 and enter that repository.
 
 We will also add a [Remote](https://help.github.com/articles/about-remote-repositories/). 
+This information tells git where our "remote" repository is located and that
+we want to call that remote "origin". 
+
 On the command line type  `git remote -v`
 
 ~~~
@@ -45,11 +42,14 @@ origin	git@github.com:rachelslaybaugh/planets.git (fetch)
 origin	git@github.com:rachelslaybaugh/planets.git (push)
 ~~~ 
 
-This information tells git where our "remote" repository is located and that
-we want to call that remote "origin". 
-We can connect multiple remotes so that we can keep things in sync with other repositories.
-In this case,  we want to connect your repository to mine.
-This will allow you to get any changes I make if you want them.
+We can also connect our repository to multiple remotes so 
+that we can keep things in sync with other repositories.
+In this case,  we want to connect your repository to mine,
+which will allow you to get any changes I make 
+and for you to contribute changes back.
+
+We will call this remote "upstream" to indicate that it is upstream from 
+your repository (this is a common practice for forked repositories).
 
 ~~~
 $ git remote add upstream https://github.com/rachelslaybaugh/planets.git
@@ -60,7 +60,9 @@ upstream	https://github.com/rachelslaybaugh/planets.git (fetch)
 upstream	https://github.com/rachelslaybaugh/planets.git (push)
 ~~~
 
-We will use these later.
+Now the repository on your local computer is connected to both
+your github online repository (origin) and 
+my github online repository (upstream). 
 
 ### Creating Conflicts
 The file `mars.txt` currently looks like this
@@ -297,6 +299,9 @@ whenever there are repeated conflicts in a particular file,
 the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
+
+
+and making [Pull Requests](https://help.github.com/articles/using-pull-requests/) on GitHub.
 
 ## Try the challenges below.
 
