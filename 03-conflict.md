@@ -5,8 +5,11 @@ subtitle: Conflicts
 ---
 > ## Learning Objectives 
 >
+> *   Be able to fork a repository on GitHub.
+> *   Add and use remotes.
 > *   Explain what conflicts are and when they can occur.
 > *   Resolve conflicts resulting from a merge.
+> *   Learn how to submit a pull request.
 
 As soon as people can work in parallel,
 someone's going to step on someone else's toes.
@@ -16,10 +19,51 @@ we could make different changes to each copy.
 Version control helps us manage these [conflicts](reference.html#conflicts)
 by giving us tools to [resolve](reference.html#resolve) overlapping changes.
 
+### Forking and Remotes
 To see how we can resolve conflicts,
 we must first create one.
+We're going to combine this with learning about [Forking](https://help.github.com/articles/fork-a-repo/)
+and making [Pull Requests](https://help.github.com/articles/using-pull-requests/) on GitHub.
+Open a webbrowser and navigate to github. Log in as yourself.
+Now, navigate to [https://github.com/rachelslaybaugh/planets](https://github.com/rachelslaybaugh/planets) and click the "Fork" button.
+
+<img src="fig/fork.png" alt="The fork button" />
+
+This will create a copy of my repository under your username (you can rename it so you don't cause conflicts with your existing plants directory).
+
+Now, open your shell, navigate to the location where you are doing work for this class,
+and clone the repository that you just forked from me,
+and enter that repository.
+
+We will also add a [Remote](https://help.github.com/articles/about-remote-repositories/). 
+On the command line type  `git remote -v`
+
+~~~
+$git remote -v
+origin	git@github.com:rachelslaybaugh/planets.git (fetch)
+origin	git@github.com:rachelslaybaugh/planets.git (push)
+~~~ 
+
+This information tells git where our "remote" repository is located and that
+we want to call that remote "origin". 
+We can connect multiple remotes so that we can keep things in sync with other repositories.
+In this case,  we want to connect your repository to mine.
+This will allow you to get any changes I make if you want them.
+
+~~~
+$git remote add upstream https://github.com/rachelslaybaugh/planets.git
+$git remote -v 
+origin	git@github.com:rachelslaybaugh/planets.git (fetch)
+origin	git@github.com:rachelslaybaugh/planets.git (push)
+upstream	https://github.com/rachelslaybaugh/planets.git (fetch)
+upstream	https://github.com/rachelslaybaugh/planets.git (push)
+~~~
+
+We will use these later.
+
+### Creating Conflicts
 The file `mars.txt` currently looks like this
-in both partners' copies of our `planets` repository:
+in both copies of our `planets` repository:
 
 ~~~ {.bash}
 $ cat mars.txt
