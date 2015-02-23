@@ -12,29 +12,34 @@ subtitle: Conflicts
 
 
 ### Forking and Remotes
-We can use GitHub's idea of [Forking](https://help.github.com/articles/fork-a-repo/)
+We can use GitHub's ideas of [Forking](https://help.github.com/articles/fork-a-repo/)
 and [Remotes](https://help.github.com/articles/about-remote-repositories/)
 to see how we can collaborate with projects in a way that allows us
-to contribute back in a more elegant way.
+to contribute back more elegantly than we did in lesson 3.
 
-Open a webbrowser and navigate to github. Log in as yourself.
-Now, navigate to [https://github.com/rachelslaybaugh/planets](https://github.com/rachelslaybaugh/planets) and click the "Fork" button.
+Open a webbrowser and navigate to [GitHub](https://github.com/) and log in. 
+Now, navigate to [https://github.com/rachelslaybaugh/planets](https://github.com/rachelslaybaugh/planets) 
+and click the "Fork" button in the upper right hand corner.
 
 <img src="fig/fork.png" alt="The fork button" />
 
-This will create a copy of my repository under your username 
+This will create a *copy* of my repository under your username; 
+that is, it will be owned by you 
 (you can rename it so you don't cause conflicts with your existing planets directory).
 
-Now, open your shell, 
+Next, open your shell, 
 navigate to the location where you are doing work for this class,
 clone the repository that you just forked from me,
 and enter that repository.
 
-We will also add a [Remote](https://help.github.com/articles/about-remote-repositories/). 
-This information tells git where our "remote" repository is located and that
-we want to call that remote "origin". 
+But how does git know that your local repository is connected to an online repository?
+Git uses what is called add a [Remote](https://help.github.com/articles/about-remote-repositories/) to keep track of these connections. 
+This information tells git where our "remote" repository is located,
+and each remote repository has a name. 
+The general convention is that your base repository is called "origin";
+git will automatically give our GitHub connection this name.
 
-On the command line type  `git remote -v`
+On the command line type `git remote -v`.
 
 ~~~
 $ git remote -v
@@ -42,13 +47,18 @@ origin	git@github.com:rachelslaybaugh/planets.git (fetch)
 origin	git@github.com:rachelslaybaugh/planets.git (push)
 ~~~ 
 
-We can also connect our repository to multiple remotes so 
+We can see that the connection is to your repository 
+and that it has been named origin. 
+The fetch and push designators mean that it is a two-way connection.
+
+We can also connect our repository to *other remotes* so 
 that we can keep things in sync with other repositories.
-In this case,  we want to connect your repository to mine,
-which will allow you to get any changes I make 
+In this case,  we want to connect your repository to mine.
+This will allow you to get any changes I make 
 and for you to contribute changes back.
 
-We will call this remote "upstream" to indicate that it is upstream from 
+We will use the `remote add` command and 
+call this remote "upstream" to indicate that it is upstream from 
 your repository (this is a common practice for forked repositories).
 
 ~~~
@@ -61,8 +71,8 @@ upstream	https://github.com/rachelslaybaugh/planets.git (push)
 ~~~
 
 Now the repository on your local computer is connected to both
-your github online repository (origin) and 
-my github online repository (upstream). 
+*your* github online repository (`origin`) and 
+*my* github online repository (`upstream`). 
 
 ### Creating Conflicts
 The file `mars.txt` currently looks like this
