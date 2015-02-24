@@ -98,6 +98,7 @@ both the local and remote repositories.
 A merge would take your repository from the first image to the second image.
 
 <img src="fig/pre-merge.png" alt="before a merge" />
+
 <img src="fig/post-merge.png" alt="after a merge" />
 
 Once Rachel has indicated that she has made changes to the remote repository,
@@ -183,11 +184,13 @@ This allows us to work effectively in groups by having our own
 copy of things while keeping up with a source copy of things.
 
 ### Exercise: push a change to GitHub
-1. Edit mars.md. 
+1. Edit `mars.md`. 
 Add one sentence to the file that is about Mars.
 
-2. Add a file to the repository called lessons.txt. 
+2. Add a file to the repository called `lessons.txt` or `lessons.md`. 
 In that file tell me about one thing you've learned in this lesson so far.
+I'd also appreciate any feedback you have about this lesson:
+how to make it clearer, what works, what doesn't work.
 
 3. Git add and commit those changes, 
 and push them to your GitHub (origin) repository.
@@ -217,25 +220,29 @@ and not merged.
 
 To share your changes with the
 upstream repository, click the green "compare and review" button on the upper
-left of the GitHub interface for your forked repository, and
-GitHub will show you a summary of your commits.  
+left of the GitHub interface for your forked repository (first picture below),
+and GitHub will show you a summary of your commits.  
 Make sure that you're comparing the correct
-"base" and "head"--in this case rachelslaybaugh/planets and master
-to <yourname>/planets and master. (This time this is simple, but it's
+"base" and "head"--in this case `rachelslaybaugh/planets` and `master`
+to `<yourname>/planets` and `master`. (This time this is simple, but it's
 good practice to check for when you have a case that is more complex.)
-If you then
-click on "Create pull request," your
+If you then click on "Create pull request" (second picture below) your
 request will be sent to the upstream repository for acceptance or
 rejection.
 
-> Note that the concepts of Fork and Pull Request are unique to GitHub.
+<img src="fig/Compare.png" alt="before a merge" />
+
+<img src="fig/Creat-pull-request.png" alt="after a merge" />
+
+> The concepts of Fork and Pull Request are unique to GitHub.
 > There are other ways to handle the workflow we will cover here, 
 > but for now we'll stick to GitHub's method.
 >
-> The concept of Remotes are part of git itself.
+> The concepts of Remotes, fetch, merge, and pull are part of git
+> and are not unique to GitHub.
 
 
-## Try the challenges below.
+## Try the challenge below
 
 > ## Creating a Pull Request
 >
