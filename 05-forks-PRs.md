@@ -60,11 +60,11 @@ We can also connect our repository to *other remotes* so
 that we can keep things in sync with other repositories.
 In this case,  we want to connect your repository to mine.
 This will allow you to get any changes I make 
-and for you to contribute changes back.
+and for you to (potentially) contribute changes back.
 
 We will use the `remote add` command and 
 call this remote "upstream" to indicate that it is upstream from 
-your repository (this is a common practice for forked repositories).
+your repository (this nomenclature is common for forked repositories).
 
 ~~~
 $ git remote add upstream https://github.com/rachelslaybaugh/planets.git
@@ -82,7 +82,91 @@ Now the repository on your local computer is connected to both
 
 ### Getting Changes
 One of the main reasons to connect to my repository is so you can
-get changes that I make.
+get changes that I make. 
+We use the process of `fetch` and `merge` to get the upstream changes
+into your local version. 
+
+`fetch` will download any changes from a remote repository, 
+updating your repository data,
+but leaving your local repository unchanged.
+One reason to do this is that you can checkout the changes made remotely
+prior to combining them with your local repository.
+
+`merge` joins two development histories together. 
+This operation preserves the ancestry of each commit from 
+both the local and remote repositories. 
+A merge would take your repository from the first image to the second image.
+
+<img src="fig/pre-merge.png" alt="before a merge" />
+<img src="fig/post-merge.png" alt="after a merge" />
+
+Once Rachel has indicated that she has made changes to the remote repository,
+get those changes for your local repository:
+
+~~~
+$ git fetch upstream
+remote: Counting objects: 75, done.
+ remote: Compressing objects: 100% (53/53), done.
+ remote: Total 62 (delta 27), reused 44 (delta 9)
+ Unpacking objects: 100% (62/62), done.
+ From https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY
+  * [new branch]      master     -> upstream/master
+~~~
+
+This will get everytying that's been changed in Rachel's online version.
+We'll largely skip over [branches] (),
+but for good measure make sure you're on the master branch.
+This should give you output like that below.
+
+~~~
+$ git checkout master
+
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+~~~
+
+Next, merge in the changes. 
+If everything goes well, it should look like something like
+
+~~~
+$ git merge upstream/master
+
+Updating a422352..5fdff0f
+ Fast-forward
+  mars.txt                    |    9 -------
+  mars.md                     |    7 ++++++
+  2 files changed, 7 insertions(+), 9 deletions(-)
+  delete mode 100644 mars.txt
+  create mode 100644 mars.md
+~~~
+
+If you made a change that caused a conflict, you will instead get something that looks like
+
+~~~
+$ git merge upstream/master
+Auto-merging 03-pipefilter.md
+CONFLICT (content): Merge conflict in pluto.txt
+Auto-merging pluto.txt
+CONFLICT (content): Merge conflict in mars.txt
+Auto-merging mars.txt
+Automatic merge failed; fix conflicts and then commit the result.
+~~~
+
+Now you need to resolve the conflicts by editing the files that are in conflict,
+adding those files, and then commiting them. 
+
+> Note that a `pull` is git simply doing a `fetch` and `merge` for you.
+> If you know you're comfortable with the remote changes, 
+> you can just `pull` directly and not bother with the intermediate steps.
+
+Finally, you'd like those changes to be pushed up to your remote repository, origin.
+This is just like what we did before.
+
+~~~
+$ git push origin master
+
+~~~
+
 
 
 ### Creating Conflicts
