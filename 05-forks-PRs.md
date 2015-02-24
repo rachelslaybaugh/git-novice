@@ -17,7 +17,7 @@ and [Remotes](https://help.github.com/articles/about-remote-repositories/)
 to see how we can collaborate with projects in a way that allows us
 to contribute back more elegantly than we did in lesson 3.
 
-Open a webbrowser and navigate to [GitHub](https://github.com/) and log in. 
+Open a webbrowser, navigate to [GitHub](https://github.com/), and log in. 
 Now, navigate to [https://github.com/rachelslaybaugh/planets](https://github.com/rachelslaybaugh/planets) 
 and click the "Fork" button in the upper right hand corner.
 
@@ -33,23 +33,28 @@ clone the repository that you just forked from me,
 and enter that repository.
 
 But how does git know that your local repository is connected to an online repository?
-Git uses what is called add a [Remote](https://help.github.com/articles/about-remote-repositories/) to keep track of these connections. 
+Git uses what is called a [Remote](https://help.github.com/articles/about-remote-repositories/) to keep track of these connections. 
 This information tells git where our "remote" repository is located,
 and each remote repository has a name. 
 The general convention is that your base repository is called "origin";
-git will automatically give our GitHub connection this name.
+git will automatically give our GitHub connection this name upon cloning.
 
 On the command line type `git remote -v`.
 
 ~~~
 $ git remote -v
-origin	git@github.com:rachelslaybaugh/planets.git (fetch)
-origin	git@github.com:rachelslaybaugh/planets.git (push)
+origin	https://github.com/<yourname>/planets.git (fetch)
+origin	https://github.com/<yourname>/planets.git (push)
 ~~~ 
 
 We can see that the connection is to your repository 
 and that it has been named origin. 
 The fetch and push designators mean that it is a two-way connection.
+
+> A remote doesn't have to be on the internet.
+> A remote could be hosted on a server at a laboratory,
+> on someone else's computer on a network, etc.
+> In the case of using GitHub it is obviously online.
 
 We can also connect our repository to *other remotes* so 
 that we can keep things in sync with other repositories.
@@ -64,15 +69,21 @@ your repository (this is a common practice for forked repositories).
 ~~~
 $ git remote add upstream https://github.com/rachelslaybaugh/planets.git
 $ git remote -v 
-origin	git@github.com:rachelslaybaugh/planets.git (fetch)
-origin	git@github.com:rachelslaybaugh/planets.git (push)
-upstream	https://github.com/rachelslaybaugh/planets.git (fetch)
-upstream	https://github.com/rachelslaybaugh/planets.git (push)
+origin  https://github.com/<yourname>/planets.git (fetch)
+origin  https://github.com/<yourname>/planets.git (push)
+upstream https://github.com/rachelslaybaugh/planets.git (fetch)
+upstream https://github.com/rachelslaybaugh/planets.git (push)
 ~~~
 
 Now the repository on your local computer is connected to both
 *your* github online repository (`origin`) and 
 *my* github online repository (`upstream`). 
+
+
+### Getting Changes
+One of the main reasons to connect to my repository is so you can
+get changes that I make.
+
 
 ### Creating Conflicts
 The file `mars.txt` currently looks like this
@@ -312,6 +323,13 @@ or find a way to divide the work up differently.
 
 
 and making [Pull Requests](https://help.github.com/articles/using-pull-requests/) on GitHub.
+
+> Note that the concepts of Fork and Pull Request are unique to GitHub.
+> There are other ways to handle the workflow we will cover here, 
+> but for now we'll stick to GitHub's method.
+>
+> The concept of Remotes are part of git itself.
+
 
 ## Try the challenges below.
 
