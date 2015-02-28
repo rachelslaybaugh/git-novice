@@ -839,6 +839,11 @@ nothing to commit, working directory clean
 > commit your changes,
 > then modify one line and add a fourth and display the differences
 > between its updated state and its original state.
+>
+> Use a shell command to capture the output of the differences
+> and submit that file.
+>
+> What command did you use to accomplish this?
 
 > ## Places to Create Git Repositories  
 >
