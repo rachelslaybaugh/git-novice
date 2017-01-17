@@ -1,66 +1,27 @@
 ---
-layout: page
-title: Version Control with Git
-subtitle: Reference
+layout: reference
+permalink: /reference/
 ---
-## [A Better Kind of Backup](01-backup.html)
 
-*   Use `git config` to configure
-    a user name, email address, editor, and other preferences once per machine.
-*   `git init` initializes a repository.
-*   `git status` shows the status of a repository.
-*   Files can be stored in a project's working directory (which users see),
-    the staging area (where the next commit is being built up)
-    and the local repository (where snapshots are permanently recorded).
-*   `git add` puts files in the staging area.
-*   `git commit` creates a snapshot of the staging area in the local repository.
-*   Always write a log message when committing changes.
-*   `git diff` displays differences between revisions.
-*   `git checkout` recovers old versions of files.
-*   The `.gitignore` file tells Git what files to ignore.
+## Git Cheatsheets for Quick Reference
 
-## [Collaborating](02-collab.html)
-
-*   A local Git repository can be connected to one or more remote repositories.
-*   Use the HTTPS protocol to connect to remote repositories until you have learned how to set up SSH.
-*   `git push` copies changes from a local repository to a remote repository.
-*   `git pull` copies changes from a remote repository to a local repository.
-*   `git clone` copies a remote repository to create a local repository
-    with a remote called `origin` automatically set up.
-
-## [Conflicts](03-conflict.html)
-
-*   Conflicts occur when two or more people change the same file(s) at the same time.
-*   The version control system does not allow people to blindly overwrite each other's changes.
-    Instead, it highlights conflicts so that they can be resolved.
-
-## [Open Science](04-open.html)
-
-*   Open scientific work is more useful and more highly cited than closed.
-*   People who incorporate GPL'd software into theirs must make theirs open;
-    most other open licenses do not require this.
-*   The Creative Commons family of licenses allow people to mix and match
-    requirements and restrictions on attribution,
-    creation of derivative works,
-    further sharing,
-    and commercialization.
-*   People who are not lawyers should not try to write licenses from scratch.
-*   Projects can be hosted on university servers,
-    on personal domains,
-    or on public forges.
-*   Rules regarding intellectual property and storage of sensitive information apply
-    no matter where code and data are hosted.
+*   A great [printable git cheatsheet](https://services.github.com/resources/) is available in PDF from the GitHub training website.
+*   An [interactive one-page visualisation](http://ndpsoftware.com/git-cheatsheet.html)
+    about the relationships between workspace, staging area, local repository, upstream repository, and the commands associated with each (with explanations).
+*   Both resources are also available in other languages e.g. Spanish, French, and more
 
 ## Glossary
 
+{:auto_ids}
 change set
-:   A group of changes to one or more files
-    that are [committed](#commit) to a [version control](#version-control) [repository](#repository)
-    in a single operation.
+:   A group of changes to one or more files that are or will be added
+    to a single [commit](#commit) in a [version control](#version-control)
+    [repository](#repository).
 
 commit
-:   To record the current state of a set of files (a [change set](#changeset))
-    in a [version control](#version-control) [repository](#repository).
+:   To record the current state of a set of files (a [change set](#change-set))
+    in a [version control](#version-control) [repository](#repository). As a noun,
+    the result of committing, i.e. a recorded change set in a repository.
     If a commit contains changes to multiple files,
     all of the changes are recorded together.
 
@@ -75,32 +36,42 @@ HTTP
     on the World Wide Web.
 
 infective license
-:   A license such as the [GPL](http://opensource.org/licenses/GPL-3.0)
-    that compels people who incorporate material into their own work
-    to place similar sharing requirements on it.
+:   A license, such as the [GPL](http://opensource.org/licenses/GPL-3.0),
+    that legally requires people who incorporate material under the
+    infective license
+    into their own work to also release under the same infective license
+    (e.g. under the GPL license).
 
 merge
-:   (a repository):
-    To reconcile two sets of changes to a [repository](#repository).
+:   (a repository): To reconcile two sets of changes to a
+    [repository](#repository).
 
 protocol
 :   A set of rules that define how one computer communicates with another.
     Common protocols on the Internet include [HTTP](#http) and [SSH](#ssh).
 
 remote
-:   A version control [repository](#repository) other than the current one
-    that the current one is somehow connected to or mirroring.
+:   (of a repository) A version control [repository](#repository) connected to another,
+    in such way that both can be kept in sync exchanging [commits](#commit).
 
 repository
 :   A storage area where a [version control](#version-control) system
-    stores old [revisions](#revision) of files and information about who changed what, when.
+    stores the full history of [commits](#commit) of a project and information
+    about who changed what, when.
 
 resolve
 :   To eliminate the [conflicts](#conflict) between two or more incompatible changes to a file or set of files
     being managed by a [version control](#version-control) system.
 
 revision
-:   A recorded state of a [version control](#version-control) [repository](#repository).
+:   A synonym for [commit](#commit).
+
+SHA-1
+:   [SHA-1 hashes](http://en.wikipedia.org/wiki/SHA-1) is what Git uses to compute identifiers, including for commits.
+    To compute these, Git uses not only the actual change of a commit, but also its metadata (such as date, author,
+    message), including the identifiers of all commits of preceding changes. This makes Git commit IDs virtually unique.
+    I.e., the likelihood that two commits made independently, even of the same change, receive the same ID is exceedingly
+    small.
 
 SSH
 :   The Secure Shell [protocol](#protocol) used for secure communication between computers.
@@ -110,6 +81,6 @@ timestamp
 
 version control
 :   A tool for managing changes to a set of files.
-    Each set of changes creates a new [revision](#revision) of the files;
-    the version control system allows users to recover old revisions reliably,
+    Each set of changes creates a new [commit](#commit) of the files;
+    the version control system allows users to recover old commits reliably,
     and helps manage conflicting changes made by different users.
